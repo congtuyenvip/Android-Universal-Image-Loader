@@ -22,10 +22,10 @@ import android.os.Build;
 import android.os.StrictMode;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.WeakLRULimitedMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.sample.fragment.WeakLRULimitedMemoryCache;
 
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
@@ -54,7 +54,11 @@ public class UILApplication extends Application {
         config.threadPriority(Thread.NORM_PRIORITY - 2);
         config.denyCacheImageMultipleSizesInMemory();
         config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
-        config.memoryCache(new WeakLRULimitedMemoryCache(16 * 1024 * 1024));
+        try {
+            config.memoryCache(new WeakLRULimitedMemoryCache(16 * 1024 * 1024));
+        } catch (Exception pE) {
+            pE.printStackTrace();
+        }
         config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
         config.tasksProcessingOrder(QueueProcessingType.LIFO);
         config.writeDebugLogs(); // Remove for release app
