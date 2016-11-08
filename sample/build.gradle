@@ -1,17 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.nostra13.universalimageloader"
-        minSdkVersion 5
+        applicationId "com.ctvip.uil.sample"
+        minSdkVersion 9
         targetSdkVersion 22
         versionCode 40
-        versionName "1.9.5"
+        versionName "1.9.6"
     }
-
     useLibrary 'org.apache.http.legacy'
     lintOptions {
         abortOnError false
