@@ -30,12 +30,12 @@ import java.util.*;
 public abstract class BaseMemoryCache implements MemoryCache {
 
 	/** Stores not strong references to objects */
-	private final Map<String, Reference<Bitmap>> softMap = Collections.synchronizedMap(new HashMap<String, Reference<Bitmap>>());
+	private final Map<String, Reference<Bitmap>> mSoftCacheMap = Collections.synchronizedMap(new HashMap<String, Reference<Bitmap>>());
 
 	@Override
 	public Bitmap get(String key) {
 		Bitmap result = null;
-		Reference<Bitmap> reference = softMap.get(key);
+		Reference<Bitmap> reference = mSoftCacheMap.get(key);
 		if (reference != null) {
 			result = reference.get();
 		}
@@ -44,26 +44,26 @@ public abstract class BaseMemoryCache implements MemoryCache {
 
 	@Override
 	public boolean put(String key, Bitmap value) {
-		softMap.put(key, createReference(value));
+		mSoftCacheMap.put(key, createReference(value));
 		return true;
 	}
 
 	@Override
 	public Bitmap remove(String key) {
-		Reference<Bitmap> bmpRef = softMap.remove(key);
+		Reference<Bitmap> bmpRef = mSoftCacheMap.remove(key);
 		return bmpRef == null ? null : bmpRef.get();
 	}
 
 	@Override
 	public Collection<String> keys() {
-		synchronized (softMap) {
-			return new HashSet<String>(softMap.keySet());
+		synchronized (mSoftCacheMap) {
+			return new HashSet<String>(mSoftCacheMap.keySet());
 		}
 	}
 
 	@Override
 	public void clear() {
-		softMap.clear();
+		mSoftCacheMap.clear();
 	}
 
 	/** Creates {@linkplain Reference not strong} reference of value */

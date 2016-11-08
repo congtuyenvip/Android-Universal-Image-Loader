@@ -76,7 +76,7 @@ public class ImagePagerFragment extends BaseFragment {
 
 		@Override
 		public void destroyItem(ViewGroup container, int position, Object object) {
-			container.removeView((View) object);
+//			container.removeView((View) object);
 		}
 
 		@Override

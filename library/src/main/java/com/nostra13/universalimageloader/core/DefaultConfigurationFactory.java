@@ -20,13 +20,14 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+
 import com.nostra13.universalimageloader.cache.disc.DiskCache;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.impl.ext.LruDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.FileNameGenerator;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.MemoryCache;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
+import com.nostra13.universalimageloader.cache.memory.impl.WeakLRULimitedMemoryCache;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.assist.deque.LIFOLinkedBlockingDeque;
 import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
@@ -108,7 +109,7 @@ public class DefaultConfigurationFactory {
 	}
 
 	/**
-	 * Creates default implementation of {@link MemoryCache} - {@link LruMemoryCache}<br />
+	 * Creates default implementation of {@link MemoryCache} - {@link WeakLRULimitedMemoryCache}<br />
 	 * Default cache size = 1/8 of available app memory.
 	 */
 	public static MemoryCache createMemoryCache(Context context, int memoryCacheSize) {
@@ -120,7 +121,7 @@ public class DefaultConfigurationFactory {
 			}
 			memoryCacheSize = 1024 * 1024 * memoryClass / 8;
 		}
-		return new LruMemoryCache(memoryCacheSize);
+		return new WeakLRULimitedMemoryCache(memoryCacheSize);
 	}
 
 	private static boolean hasHoneycomb() {

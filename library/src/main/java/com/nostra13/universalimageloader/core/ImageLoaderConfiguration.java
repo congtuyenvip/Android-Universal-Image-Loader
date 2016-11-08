@@ -351,15 +351,16 @@ public final class ImageLoaderConfiguration {
 		 * Sets maximum memory cache size for {@link android.graphics.Bitmap bitmaps} (in bytes).<br />
 		 * Default value - 1/8 of available app memory.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache LruMemoryCache} will be used as
+		 * {@link com.nostra13.universalimageloader.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
 		 * memory cache. You can use {@link #memoryCache(MemoryCache)} method to set your own implementation of
 		 * {@link MemoryCache}.
 		 */
-		public Builder memoryCacheSize(int memoryCacheSize) {
+		public Builder memoryCacheSize(int memoryCacheSize) throws Exception  {
 			if (memoryCacheSize <= 0) throw new IllegalArgumentException("memoryCacheSize must be a positive number");
 
 			if (memoryCache != null) {
 				L.w(WARNING_OVERLAP_MEMORY_CACHE);
+				throw new Exception(WARNING_OVERLAP_MEMORY_CACHE);
 			}
 
 			this.memoryCacheSize = memoryCacheSize;
@@ -371,17 +372,18 @@ public final class ImageLoaderConfiguration {
 		 * bitmaps}.<br />
 		 * Default value - 1/8 of available app memory.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache LruMemoryCache} will be used as
+		 * {@link com.nostra13.universalimageloader.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
 		 * memory cache. You can use {@link #memoryCache(MemoryCache)} method to set your own implementation of
 		 * {@link MemoryCache}.
 		 */
-		public Builder memoryCacheSizePercentage(int availableMemoryPercent) {
+		public Builder memoryCacheSizePercentage(int availableMemoryPercent) throws Exception {
 			if (availableMemoryPercent <= 0 || availableMemoryPercent >= 100) {
 				throw new IllegalArgumentException("availableMemoryPercent must be in range (0 < % < 100)");
 			}
 
 			if (memoryCache != null) {
 				L.w(WARNING_OVERLAP_MEMORY_CACHE);
+				throw new Exception(WARNING_OVERLAP_MEMORY_CACHE);
 			}
 
 			long availableMemory = Runtime.getRuntime().maxMemory();
@@ -391,7 +393,7 @@ public final class ImageLoaderConfiguration {
 
 		/**
 		 * Sets memory cache for {@link android.graphics.Bitmap bitmaps}.<br />
-		 * Default value - {@link com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache LruMemoryCache}
+		 * Default value - {@link com.nostra13.universalimageloader.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache}
 		 * with limited memory cache size (size = 1/8 of available app memory)<br />
 		 * <br />
 		 * <b>NOTE:</b> If you set custom memory cache then following configuration option will not be considered:
@@ -399,9 +401,10 @@ public final class ImageLoaderConfiguration {
 		 * <li>{@link #memoryCacheSize(int)}</li>
 		 * </ul>
 		 */
-		public Builder memoryCache(MemoryCache memoryCache) {
+		public Builder memoryCache(MemoryCache memoryCache) throws Exception {
 			if (memoryCacheSize != 0) {
 				L.w(WARNING_OVERLAP_MEMORY_CACHE);
+				throw new Exception(WARNING_OVERLAP_MEMORY_CACHE);
 			}
 
 			this.memoryCache = memoryCache;
