@@ -23,7 +23,7 @@ import com.ctvip.uil.core.listener.ImageLoadingListener;
 import com.ctvip.uil.utils.Logger;
 
 /**
- * Displays bitmap in {@link com.nostra13.uil.core.imageaware.ImageAware}. Must be called on UI thread.
+ * Displays bitmap in {@link com.ctvip.uil.core.imageaware.ImageAware}. Must be called on UI thread.
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  * @see ImageLoadingListener

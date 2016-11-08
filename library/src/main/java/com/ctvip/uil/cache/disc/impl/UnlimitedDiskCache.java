@@ -20,7 +20,7 @@ import com.ctvip.uil.cache.disc.naming.FileNameGenerator;
 import java.io.File;
 
 /**
- * Default implementation of {@linkplain com.nostra13.uil.cache.disc.DiskCache disk cache}.
+ * Default implementation of {@linkplain com.ctvip.uil.cache.disc.DiskCache disk cache}.
  * Cache size is unlimited.
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
@@ -43,7 +43,7 @@ public class UnlimitedDiskCache extends BaseDiskCache {
 	/**
 	 * @param cacheDir          Directory for file caching
 	 * @param reserveCacheDir   null-ok; Reserve directory for file caching. It's used when the primary directory isn't available.
-	 * @param fileNameGenerator {@linkplain com.nostra13.uil.cache.disc.naming.FileNameGenerator
+	 * @param fileNameGenerator {@linkplain com.ctvip.uil.cache.disc.naming.FileNameGenerator
 	 *                          Name generator} for cached files
 	 */
 	public UnlimitedDiskCache(File cacheDir, File reserveCacheDir, FileNameGenerator fileNameGenerator) {

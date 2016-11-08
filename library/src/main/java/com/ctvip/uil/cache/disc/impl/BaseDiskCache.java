@@ -72,7 +72,7 @@ public abstract class BaseDiskCache implements DiskCache {
 	/**
 	 * @param cacheDir          Directory for file caching
 	 * @param reserveCacheDir   null-ok; Reserve directory for file caching. It's used when the primary directory isn't available.
-	 * @param fileNameGenerator {@linkplain com.nostra13.uil.cache.disc.naming.FileNameGenerator
+	 * @param fileNameGenerator {@linkplain com.ctvip.uil.cache.disc.naming.FileNameGenerator
 	 *                          Name generator} for cached files
 	 */
 	public BaseDiskCache(File cacheDir, File reserveCacheDir, FileNameGenerator fileNameGenerator) {

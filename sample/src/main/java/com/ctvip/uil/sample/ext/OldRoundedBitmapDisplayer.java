@@ -57,11 +57,11 @@ public class OldRoundedBitmapDisplayer implements BitmapDisplayer {
 
 	/**
 	 * Process incoming {@linkplain Bitmap} to make rounded corners according to target
-	 * {@link com.nostra13.uil.core.imageaware.ImageViewAware}.<br />
+	 * {@link com.ctvip.uil.core.imageaware.ImageViewAware}.<br />
 	 * This method <b>doesn't display</b> result bitmap in {@link ImageView}
 	 *
 	 * @param bitmap      Incoming Bitmap to process
-	 * @param imageAware  Target {@link com.nostra13.uil.core.imageaware.ImageAware ImageAware} to
+	 * @param imageAware  Target {@link com.ctvip.uil.core.imageaware.ImageAware ImageAware} to
 	 *                    display bitmap in
 	 * @param roundPixels Rounded pixels of corner
 	 * @return Result bitmap with rounded corners

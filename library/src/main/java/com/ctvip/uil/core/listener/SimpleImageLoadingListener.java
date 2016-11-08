@@ -21,7 +21,7 @@ import com.ctvip.uil.core.assist.FailReason;
 
 /**
  * A convenient class to extend when you only want to listen for a subset of all the image loading events. This
- * implements all methods in the {@link com.nostra13.uil.core.listener.ImageLoadingListener} but does
+ * implements all methods in the {@link com.ctvip.uil.core.listener.ImageLoadingListener} but does
  * nothing.
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)

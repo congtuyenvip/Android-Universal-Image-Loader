@@ -53,7 +53,7 @@ public class FailReason {
 		 */
 		DECODING_ERROR,
 		/**
-		 * {@linkplain com.nostra13.uil.core.ImageLoader#denyNetworkDownloads(boolean) Network
+		 * {@linkplain com.ctvip.uil.core.ImageLoader#denyNetworkDownloads(boolean) Network
 		 * downloads are denied} and requested image wasn't cached in disk cache before.
 		 */
 		NETWORK_DENIED,

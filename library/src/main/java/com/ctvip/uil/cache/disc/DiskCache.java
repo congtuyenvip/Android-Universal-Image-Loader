@@ -51,7 +51,7 @@ public interface DiskCache {
 	 * @param imageUri    Original image URI
 	 * @param imageStream Input stream of image (shouldn't be closed in this method)
 	 * @param listener    Listener for saving progress, can be ignored if you don't use
-	 *                    {@linkplain com.nostra13.uil.core.listener.ImageLoadingProgressListener
+	 *                    {@linkplain com.ctvip.uil.core.listener.ImageLoadingProgressListener
 	 *                    progress listener} in ImageLoader calls
 	 * @return <b>true</b> - if image was saved successfully; <b>false</b> - if image wasn't saved in disk cache.
 	 * @throws java.io.IOException

@@ -41,7 +41,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Presents load'n'display image task. Used to load image from Internet or file system, decode it to {@link Bitmap}, and
- * display it in {@link com.nostra13.uil.core.imageaware.ImageAware} using {@link DisplayBitmapTask}.
+ * display it in {@link com.ctvip.uil.core.imageaware.ImageAware} using {@link DisplayBitmapTask}.
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  * @see ImageLoaderConfiguration

@@ -26,10 +26,10 @@ import java.util.concurrent.locks.ReentrantLock;
  * Information for load'n'display image task
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
- * @see com.nostra13.uil.utils.MemoryCacheUtils
+ * @see com.ctvip.uil.utils.MemoryCacheUtils
  * @see DisplayImageOptions
  * @see ImageLoadingListener
- * @see com.nostra13.uil.core.listener.ImageLoadingProgressListener
+ * @see com.ctvip.uil.core.listener.ImageLoadingProgressListener
  * @since 1.3.1
  */
 final class ImageLoadingInfo {

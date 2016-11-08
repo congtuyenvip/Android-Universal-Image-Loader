@@ -30,13 +30,13 @@ import com.ctvip.uil.core.process.BitmapProcessor;
 /**
  * Contains options for image display. Defines:
  * <ul>
- * <li>whether stub image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+ * <li>whether stub image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
  * image aware view} during image loading</li>
- * <li>whether stub image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+ * <li>whether stub image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
  * image aware view} if empty URI is passed</li>
- * <li>whether stub image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+ * <li>whether stub image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
  * image aware view} if image loading fails</li>
- * <li>whether {@link com.nostra13.uil.core.imageaware.ImageAware image aware view} should be reset
+ * <li>whether {@link com.ctvip.uil.core.imageaware.ImageAware image aware view} should be reset
  * before image loading start</li>
  * <li>whether loaded image will be cached in memory</li>
  * <li>whether loaded image will be cached on disk</li>
@@ -221,7 +221,7 @@ public final class DisplayImageOptions {
 		private boolean isSyncLoading = false;
 
 		/**
-		 * Stub image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Stub image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} during image loading
 		 *
 		 * @param imageRes Stub image resource
@@ -234,7 +234,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} during image loading
 		 *
 		 * @param imageRes Image resource
@@ -245,7 +245,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming drawable will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming drawable will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} during image loading.
 		 * This option will be ignored if {@link DisplayImageOptions.Builder#showImageOnLoading(int)} is set.
 		 */
@@ -255,7 +255,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} if empty URI (null or empty
 		 * string) will be passed to <b>ImageLoader.displayImage(...)</b> method.
 		 *
@@ -267,7 +267,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming drawable will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming drawable will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} if empty URI (null or empty
 		 * string) will be passed to <b>ImageLoader.displayImage(...)</b> method.
 		 * This option will be ignored if {@link DisplayImageOptions.Builder#showImageForEmptyUri(int)} is set.
@@ -278,7 +278,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming image will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming image will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} if some error occurs during
 		 * requested image loading/decoding.
 		 *
@@ -290,7 +290,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Incoming drawable will be displayed in {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Incoming drawable will be displayed in {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} if some error occurs during
 		 * requested image loading/decoding.
 		 * This option will be ignored if {@link DisplayImageOptions.Builder#showImageOnFail(int)} is set.
@@ -301,7 +301,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} will be reset (set <b>null</b>) before image loading start
 		 *
 		 * @deprecated Use {@link #resetViewBeforeLoading(boolean) resetViewBeforeLoading(true)} instead
@@ -312,7 +312,7 @@ public final class DisplayImageOptions {
 		}
 
 		/**
-		 * Sets whether {@link com.nostra13.uil.core.imageaware.ImageAware
+		 * Sets whether {@link com.ctvip.uil.core.imageaware.ImageAware
 		 * image aware view} will be reset (set <b>null</b>) before image loading start
 		 */
 		public Builder resetViewBeforeLoading(boolean resetViewBeforeLoading) {
@@ -423,7 +423,7 @@ public final class DisplayImageOptions {
 
 		/**
 		 * Sets bitmap processor which will be process bitmaps before they will be displayed in
-		 * {@link com.nostra13.uil.core.imageaware.ImageAware image aware view} but
+		 * {@link com.ctvip.uil.core.imageaware.ImageAware image aware view} but
 		 * after they'll have been saved in memory cache.
 		 */
 		public Builder postProcessor(BitmapProcessor postProcessor) {

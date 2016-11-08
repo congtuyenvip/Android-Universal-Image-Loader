@@ -47,7 +47,7 @@ public final class ImageSizeUtils {
 
 	/**
 	 * Defines target size for image aware view. Size is defined by target
-	 * {@link com.nostra13.uil.core.imageaware.ImageAware view} parameters, configuration
+	 * {@link com.ctvip.uil.core.imageaware.ImageAware view} parameters, configuration
 	 * parameters or device display dimensions.<br />
 	 */
 	public static ImageSize defineTargetSizeForView(ImageAware imageAware, ImageSize maxImageSize) {

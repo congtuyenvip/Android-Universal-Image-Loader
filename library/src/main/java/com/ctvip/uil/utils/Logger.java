@@ -54,7 +54,7 @@ public final class Logger {
 
 	/**
 	 * Enables/disables detail logging of {@link ImageLoader} work.
-	 * Consider {@link com.nostra13.uil.utils.L#disableLogging()} to disable
+	 * Consider {@link com.ctvip.uil.utils.L#disableLogging()} to disable
 	 * ImageLoader logging completely (even error logs)<br />
 	 * Debug logs are disabled by default.
 	 */

@@ -114,7 +114,7 @@ public final class ImageLoaderConfiguration {
 	 * <li>threadPriority = {@link Builder#DEFAULT_THREAD_PRIORITY this}</li>
 	 * <li>allow to cache different sizes of image in memory</li>
 	 * <li>memoryCache = {@link DefaultConfigurationFactory#createMemoryCache(android.content.Context, int)}</li>
-	 * <li>diskCache = {@link com.nostra13.uil.cache.disc.impl.UnlimitedDiskCache}</li>
+	 * <li>diskCache = {@link com.ctvip.uil.cache.disc.impl.UnlimitedDiskCache}</li>
 	 * <li>imageDownloader = {@link DefaultConfigurationFactory#createImageDownloader(Context)}</li>
 	 * <li>imageDecoder = {@link DefaultConfigurationFactory#createImageDecoder(boolean)}</li>
 	 * <li>diskCacheFileNameGenerator = {@link DefaultConfigurationFactory#createFileNameGenerator()}</li>
@@ -155,7 +155,7 @@ public final class ImageLoaderConfiguration {
 				+ "can overlap taskExecutor() and taskExecutorForCachedImages() calls.";
 
 		/** {@value} */
-		public static final int DEFAULT_THREAD_POOL_SIZE = 3;
+		public static final int DEFAULT_THREAD_POOL_SIZE = Runtime.getRuntime().availableProcessors();
 		/** {@value} */
 		public static final int DEFAULT_THREAD_PRIORITY = Thread.NORM_PRIORITY - 2;
 		/** {@value} */
@@ -212,7 +212,7 @@ public final class ImageLoaderConfiguration {
 
 		/**
 		 * @deprecated Use
-		 * {@link #diskCacheExtraOptions(int, int, com.nostra13.uil.core.process.BitmapProcessor)}
+		 * {@link #diskCacheExtraOptions(int, int, com.ctvip.uil.core.process.BitmapProcessor)}
 		 * instead
 		 */
 		@Deprecated
@@ -351,7 +351,7 @@ public final class ImageLoaderConfiguration {
 		 * Sets maximum memory cache size for {@link android.graphics.Bitmap bitmaps} (in bytes).<br />
 		 * Default value - 1/8 of available app memory.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
+		 * {@link com.ctvip.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
 		 * memory cache. You can use {@link #memoryCache(MemoryCache)} method to set your own implementation of
 		 * {@link MemoryCache}.
 		 */
@@ -372,7 +372,7 @@ public final class ImageLoaderConfiguration {
 		 * bitmaps}.<br />
 		 * Default value - 1/8 of available app memory.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
+		 * {@link com.ctvip.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache} will be used as
 		 * memory cache. You can use {@link #memoryCache(MemoryCache)} method to set your own implementation of
 		 * {@link MemoryCache}.
 		 */
@@ -393,7 +393,7 @@ public final class ImageLoaderConfiguration {
 
 		/**
 		 * Sets memory cache for {@link android.graphics.Bitmap bitmaps}.<br />
-		 * Default value - {@link com.nostra13.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache}
+		 * Default value - {@link com.ctvip.uil.cache.memory.impl.WeakLRULimitedMemoryCache WeakLRULimitedMemoryCache}
 		 * with limited memory cache size (size = 1/8 of available app memory)<br />
 		 * <br />
 		 * <b>NOTE:</b> If you set custom memory cache then following configuration option will not be considered:
@@ -421,7 +421,7 @@ public final class ImageLoaderConfiguration {
 		 * Sets maximum disk cache size for images (in bytes).<br />
 		 * By default: disk cache is unlimited.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.uil.cache.disc.impl.ext.LruDiskCache LruDiskCache}
+		 * {@link com.ctvip.uil.cache.disc.impl.ext.LruDiskCache LruDiskCache}
 		 * will be used as disk cache. You can use {@link #diskCache(DiskCache)} method for introduction your own
 		 * implementation of {@link DiskCache}
 		 */
@@ -446,7 +446,7 @@ public final class ImageLoaderConfiguration {
 		 * Sets maximum file count in disk cache directory.<br />
 		 * By default: disk cache is unlimited.<br />
 		 * <b>NOTE:</b> If you use this method then
-		 * {@link com.nostra13.uil.cache.disc.impl.ext.LruDiskCache LruDiskCache}
+		 * {@link com.ctvip.uil.cache.disc.impl.ext.LruDiskCache LruDiskCache}
 		 * will be used as disk cache. You can use {@link #diskCache(DiskCache)} method for introduction your own
 		 * implementation of {@link DiskCache}
 		 */
@@ -461,7 +461,7 @@ public final class ImageLoaderConfiguration {
 			return this;
 		}
 
-		/** @deprecated Use {@link #diskCacheFileNameGenerator(com.nostra13.uil.cache.disc.naming.FileNameGenerator)} */
+		/** @deprecated Use {@link #diskCacheFileNameGenerator(com.ctvip.uil.cache.disc.naming.FileNameGenerator)} */
 		@Deprecated
 		public Builder discCacheFileNameGenerator(FileNameGenerator fileNameGenerator) {
 			return diskCacheFileNameGenerator(fileNameGenerator);
@@ -470,7 +470,7 @@ public final class ImageLoaderConfiguration {
 		/**
 		 * Sets name generator for files cached in disk cache.<br />
 		 * Default value -
-		 * {@link com.nostra13.uil.core.DefaultConfigurationFactory#createFileNameGenerator()
+		 * {@link com.ctvip.uil.core.DefaultConfigurationFactory#createFileNameGenerator()
 		 * DefaultConfigurationFactory.createFileNameGenerator()}
 		 */
 		public Builder diskCacheFileNameGenerator(FileNameGenerator fileNameGenerator) {
@@ -482,7 +482,7 @@ public final class ImageLoaderConfiguration {
 			return this;
 		}
 
-		/** @deprecated Use {@link #diskCache(com.nostra13.uil.cache.disc.DiskCache)} */
+		/** @deprecated Use {@link #diskCache(com.ctvip.uil.cache.disc.DiskCache)} */
 		@Deprecated
 		public Builder discCache(DiskCache diskCache) {
 			return diskCache(diskCache);
@@ -490,9 +490,9 @@ public final class ImageLoaderConfiguration {
 
 		/**
 		 * Sets disk cache for images.<br />
-		 * Default value - {@link com.nostra13.uil.cache.disc.impl.UnlimitedDiskCache
+		 * Default value - {@link com.ctvip.uil.cache.disc.impl.UnlimitedDiskCache
 		 * UnlimitedDiskCache}. Cache directory is defined by
-		 * {@link com.nostra13.uil.utils.StorageUtils#getCacheDirectory(Context)
+		 * {@link com.ctvip.uil.utils.StorageUtils#getCacheDirectory(Context)
 		 * StorageUtils.getCacheDirectory(Context)}.<br />
 		 * <br />
 		 * <b>NOTE:</b> If you set custom disk cache then following configuration option will not be considered:
@@ -517,7 +517,7 @@ public final class ImageLoaderConfiguration {
 		/**
 		 * Sets utility which will be responsible for downloading of image.<br />
 		 * Default value -
-		 * {@link com.nostra13.uil.core.DefaultConfigurationFactory#createImageDownloader(Context)
+		 * {@link com.ctvip.uil.core.DefaultConfigurationFactory#createImageDownloader(Context)
 		 * DefaultConfigurationFactory.createImageDownloader()}
 		 */
 		public Builder imageDownloader(ImageDownloader imageDownloader) {
@@ -528,7 +528,7 @@ public final class ImageLoaderConfiguration {
 		/**
 		 * Sets utility which will be responsible for decoding of image stream.<br />
 		 * Default value -
-		 * {@link com.nostra13.uil.core.DefaultConfigurationFactory#createImageDecoder(boolean)
+		 * {@link com.ctvip.uil.core.DefaultConfigurationFactory#createImageDecoder(boolean)
 		 * DefaultConfigurationFactory.createImageDecoder()}
 		 */
 		public Builder imageDecoder(ImageDecoder imageDecoder) {
@@ -549,7 +549,7 @@ public final class ImageLoaderConfiguration {
 
 		/**
 		 * Enables detail logging of {@link ImageLoader} work. To prevent detail logs don't call this method.
-		 * Consider {@link com.nostra13.uil.utils.L#disableLogging()} to disable
+		 * Consider {@link com.ctvip.uil.utils.L#disableLogging()} to disable
 		 * ImageLoader logging completely (even error logs)
 		 */
 		public Builder writeDebugLogs() {
@@ -630,7 +630,7 @@ public final class ImageLoaderConfiguration {
 
 	/**
 	 * Decorator. Handles <a href="http://code.google.com/p/android/issues/detail?id=6066">this problem</a> on slow networks
-	 * using {@link com.nostra13.uil.core.assist.FlushedInputStream}.
+	 * using {@link com.ctvip.uil.core.assist.FlushedInputStream}.
 	 *
 	 * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
 	 * @since 1.8.1

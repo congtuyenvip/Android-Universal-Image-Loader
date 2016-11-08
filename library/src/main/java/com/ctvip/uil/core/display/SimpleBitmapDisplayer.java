@@ -20,7 +20,7 @@ import com.ctvip.uil.core.assist.LoadedFrom;
 import com.ctvip.uil.core.imageaware.ImageAware;
 
 /**
- * Just displays {@link Bitmap} in {@link com.nostra13.uil.core.imageaware.ImageAware}
+ * Just displays {@link Bitmap} in {@link com.ctvip.uil.core.imageaware.ImageAware}
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  * @since 1.5.6

@@ -104,7 +104,7 @@ class ImageLoaderEngine {
 	}
 
 	/**
-	 * Returns URI of image which is loading at this moment into passed {@link com.nostra13.uil.core.imageaware.ImageAware}
+	 * Returns URI of image which is loading at this moment into passed {@link com.ctvip.uil.core.imageaware.ImageAware}
 	 */
 	String getLoadingUriForView(ImageAware imageAware) {
 		return cacheKeysForImageAwares.get(imageAware.getId());
@@ -121,7 +121,7 @@ class ImageLoaderEngine {
 	/**
 	 * Cancels the task of loading and displaying image for incoming <b>imageAware</b>.
 	 *
-	 * @param imageAware {@link com.nostra13.uil.core.imageaware.ImageAware} for which display task
+	 * @param imageAware {@link com.ctvip.uil.core.imageaware.ImageAware} for which display task
 	 *                   will be cancelled
 	 */
 	void cancelDisplayTaskFor(ImageAware imageAware) {
@@ -171,7 +171,7 @@ class ImageLoaderEngine {
 	 * Stops engine, cancels all running and scheduled display image tasks. Clears internal data.
 	 * <br />
 	 * <b>NOTE:</b> This method doesn't shutdown
-	 * {@linkplain com.nostra13.uil.core.ImageLoaderConfiguration.Builder#taskExecutor(java.util.concurrent.Executor)
+	 * {@linkplain com.ctvip.uil.core.ImageLoaderConfiguration.Builder#taskExecutor(java.util.concurrent.Executor)
 	 * custom task executors} if you set them.
 	 */
 	void stop() {

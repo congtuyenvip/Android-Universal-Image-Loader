@@ -92,7 +92,7 @@ public class ImageDecodingInfo {
 		destOptions.inMutable = srcOptions.inMutable;
 	}
 
-	/** @return Original {@linkplain com.nostra13.uil.utils.MemoryCacheUtils#generateKey(String, ImageSize) image key} (used in memory cache). */
+	/** @return Original {@linkplain com.ctvip.uil.utils.MemoryCacheUtils#generateKey(String, ImageSize) image key} (used in memory cache). */
 	public String getImageKey() {
 		return imageKey;
 	}

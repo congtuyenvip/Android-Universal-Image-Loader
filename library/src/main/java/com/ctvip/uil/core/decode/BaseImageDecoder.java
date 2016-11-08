@@ -50,7 +50,7 @@ public class BaseImageDecoder implements ImageDecoder {
 
 	/**
 	 * @param loggingEnabled Whether debug logs will be written to LogCat. Usually should match {@link
-	 *                       com.nostra13.uil.core.ImageLoaderConfiguration.Builder#writeDebugLogs()
+	 *                       com.ctvip.uil.core.ImageLoaderConfiguration.Builder#writeDebugLogs()
 	 *                       ImageLoaderConfiguration.writeDebugLogs()}
 	 */
 	public BaseImageDecoder(boolean loggingEnabled) {

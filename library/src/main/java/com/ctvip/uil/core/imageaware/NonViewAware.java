@@ -25,7 +25,7 @@ import com.ctvip.uil.core.assist.ViewScaleType;
 /**
  * ImageAware which provides needed info for processing of original image but do nothing for displaying image. It's
  * used when user need just load and decode image and get it in {@linkplain
- * com.nostra13.uil.core.listener.ImageLoadingListener#onLoadingComplete(String, android.view.View,
+ * com.ctvip.uil.core.listener.ImageLoadingListener#onLoadingComplete(String, android.view.View,
  * android.graphics.Bitmap) callback}.
  *
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
