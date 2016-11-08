@@ -30,8 +30,8 @@ import com.ctvip.uil.cache.memory.MemoryCache;
 import com.ctvip.uil.cache.memory.impl.WeakLRULimitedMemoryCache;
 import com.ctvip.uil.core.assist.QueueProcessingType;
 import com.ctvip.uil.core.assist.deque.LIFOLinkedBlockingDeque;
-import com.ctvip.uil.core.decode.BaseImageDecoder;
 import com.ctvip.uil.core.decode.ImageDecoder;
+import com.ctvip.uil.core.decode.ImagePoolDecoder;
 import com.ctvip.uil.core.display.BitmapDisplayer;
 import com.ctvip.uil.core.display.SimpleBitmapDisplayer;
 import com.ctvip.uil.core.download.BaseImageDownloader;
@@ -143,9 +143,9 @@ public class DefaultConfigurationFactory {
 		return new BaseImageDownloader(context);
 	}
 
-	/** Creates default implementation of {@link ImageDecoder} - {@link BaseImageDecoder} */
+	/** Creates default implementation of {@link ImageDecoder} - {@link ImagePoolDecoder} */
 	public static ImageDecoder createImageDecoder(boolean loggingEnabled) {
-		return new BaseImageDecoder(loggingEnabled);
+		return new ImagePoolDecoder(loggingEnabled);
 	}
 
 	/** Creates default implementation of {@link BitmapDisplayer} - {@link SimpleBitmapDisplayer} */
