@@ -17,6 +17,7 @@ package com.ctvip.uil.sample.fragment;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,13 +68,15 @@ public class ImageGridFragment extends AbsListViewBaseFragment {
 
 		ImageAdapter(Context context) {
 			inflater = LayoutInflater.from(context);
-
+			BitmapFactory.Options option = new BitmapFactory.Options();
+			option.inMutable = true;
 			options = new DisplayImageOptions.Builder()
-					.showImageOnLoading(R.drawable.ic_stub)
+//					.showImageOnLoading(R.drawable.ic_stub)
 					.showImageForEmptyUri(R.drawable.ic_empty)
 					.showImageOnFail(R.drawable.ic_error)
 					.cacheInMemory(true)
 					.cacheOnDisk(true)
+					.decodingOptions(option)
 					.considerExifParams(true)
 					.bitmapConfig(Bitmap.Config.RGB_565)
 					.build();

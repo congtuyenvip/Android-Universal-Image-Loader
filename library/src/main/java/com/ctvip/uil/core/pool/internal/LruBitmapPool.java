@@ -76,13 +76,16 @@ public class LruBitmapPool implements BitmapPool {
 
     @Override
     public synchronized void put(Bitmap bitmap) {
+
         if (bitmap == null) {
             throw new NullPointerException("Bitmap must not be null");
         }
         if (bitmap.isRecycled()) {
             throw new IllegalStateException("Cannot pool recycled bitmap");
         }
-
+        if (bitmap.getConfig() == null) {
+            return;
+        }
         if (!bitmap.isMutable() || strategy.getSize(bitmap) > maxSize
                 || !allowedConfigs.contains(bitmap.getConfig())) {
             if (Log.isLoggable(TAG, Log.VERBOSE)) {
@@ -119,7 +122,8 @@ public class LruBitmapPool implements BitmapPool {
         Bitmap result = getDirtyOrNull(width, height, config);
         if (result != null) {
             result.eraseColor(Color.TRANSPARENT);
-        } else {
+        }
+        else {
             result = Bitmap.createBitmap(width, height, config);
         }
         return result;
@@ -143,7 +147,8 @@ public class LruBitmapPool implements BitmapPool {
                 Log.d(TAG, "Missing bitmap=" + strategy.logBitmap(width, height, config));
             }
             misses++;
-        } else {
+        }
+        else {
             hits++;
             currentSize -= strategy.getSize(result);
             tracker.remove(result);
@@ -194,7 +199,8 @@ public class LruBitmapPool implements BitmapPool {
         }
         if (level >= android.content.ComponentCallbacks2.TRIM_MEMORY_BACKGROUND) {
             clearMemory();
-        } else if (level >= android.content.ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN) {
+        }
+        else if (level >= android.content.ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN) {
             trimToSize(maxSize / 2);
         }
     }
@@ -236,7 +242,8 @@ public class LruBitmapPool implements BitmapPool {
         final LruPoolStrategy strategy;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             strategy = new SizeConfigStrategy();
-        } else {
+        }
+        else {
             strategy = new AttributeStrategy();
         }
         return strategy;

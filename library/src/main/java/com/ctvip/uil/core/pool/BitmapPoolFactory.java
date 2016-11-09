@@ -25,6 +25,7 @@ import android.os.Build;
 import android.util.TypedValue;
 
 import com.ctvip.uil.core.pool.internal.Util;
+import com.ctvip.uil.utils.Logger;
 
 import java.io.FileDescriptor;
 import java.io.InputStream;
@@ -227,9 +228,11 @@ public class BitmapPoolFactory {
                 options.inBitmap = inBitmap;
             }
         }
+        options.inJustDecodeBounds = false;
         try {
             return BitmapFactory.decodeStream(is, null, options);
         } catch (Exception e) {
+            Logger.e(e);
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
                 options.inBitmap = null;
             }

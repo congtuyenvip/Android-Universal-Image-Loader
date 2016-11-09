@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class WeakLRULimitedMemCachePool extends BaseMemoryCache {
 
-    private static final int MAX_NORMAL_CACHE_SIZE_IN_MB = 16;
+    private static final int MAX_NORMAL_CACHE_SIZE_IN_MB = 128;
     private static final int MAX_NORMAL_CACHE_SIZE = MAX_NORMAL_CACHE_SIZE_IN_MB * 1024 * 1024;
 
     private static final int INITIAL_CAPACITY = 10;

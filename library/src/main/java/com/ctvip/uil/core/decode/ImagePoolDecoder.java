@@ -27,7 +27,7 @@ public class ImagePoolDecoder extends BaseImageDecoder {
 
     @Override
     public Bitmap decode(ImageDecodingInfo decodingInfo) throws IOException {
-        if (decodingInfo != null && decodingInfo.getDecodingOptions() != null && decodingInfo.getDecodingOptions().inMutable == false) {
+        if (true || decodingInfo != null && decodingInfo.getDecodingOptions() != null && decodingInfo.getDecodingOptions().inMutable == false) {
             return super.decode(decodingInfo);
         }
         Bitmap decodedBitmap;

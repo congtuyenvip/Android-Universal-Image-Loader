@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.ctvip.uil.sample"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 40
         versionName "1.9.6"
